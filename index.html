@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html lang="en">
+	
 <meta name="msapplication-TileColor" content="#3b5165">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#3b5165">
@@ -9,42 +11,77 @@
 <meta name="mobile-web-app-capable" content"yes"> 
 <meta name="apple-mobile-web-app-status-bar-style" content"black"> 
 <meta name="apple-mobile-web-app-title" content"Roles Chicken"> 
-<html>
+	
 <head>
-	<title>Open WhatsApp Chat</title>
-</head>
+<link rel="stylesheet" href="styles.css" />
+<link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+ </head>
+	
+	
 <body>
 
-    <label for="phone">Phone Number:</label>
-<select id="countryCode" name="countryCode">
-<option value="212">Morocco (+212)</option>
-</select>
-<input type="text" id="phone" name="phone" placeholder="Enter phone number">
-<button onclick="openChat()">Open Chat</button>
+<div class="container">
+ <form id="login" onsubmit="process(event)">
+   <p>Enter your phone number: 0672850666</p>
+   <input id="phone" type="tel" name="phone" />
+   <input type="submit" class="btn" value="Verify" />
+ </form>
+
+ <div class="alert alert-info" style="display: none;"></div>
+
+<button class="btn" onclick="openChat()">Open Chat</button>
+
+
+</div>
+
+ </body>
 
 <script>
-  // Get the user's IP address and geolocation data
-  fetch("https://ipapi.co/json/")
-    .then(response => response.json())
-    .then(data => {
-      // Set the country code select box to the user's country
-      var countryCode = data.country_calling_code;
-      document.getElementById("countryCode").value = countryCode;
-    })
-    .catch(error => console.error(error));
 
-  function openChat() {
-    var countryCode = document.getElementById("countryCode").value;
-    var phoneNumber = document.getElementById("phone").value;
-    if (phoneNumber.length > 0) {
-      window.location.href = "https://api.whatsapp.com/send?phone=" + countryCode + phoneNumber;
-    } else {
-      alert("Please enter a valid phone number");
-    }
+function getIp(callback) {
+ fetch('https://ipinfo.io/json?token=f0076d2b18eca7', { headers: { 'Accept': 'application/json' }})
+   .then((resp) => resp.json())
+   .catch(() => {
+     return {
+       country: 'us',
+     };
+   })
+   .then((resp) => callback(resp.country));
+}
+
+  const phoneInputField = document.querySelector("#phone");
+const phoneInput = window.intlTelInput(phoneInputField, {
+ initialCountry: "auto",
+ geoIpLookup: getIp,
+ utilsScript:
+   "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+});
+
+
+const info = document.querySelector(".alert-info");
+
+function process(event) {
+ event.preventDefault();
+
+ const phoneNumber = phoneInput.getNumber();
+
+ info.style.display = "";
+ info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
+}
+
+
+
+function openChat() {
+const phoneNumber = phoneInput.getNumber();
+      window.location.href = "https://api.whatsapp.com/send?phone=" + phoneNumber;
   }
+
 </script>
 
-</body>
-</html>
 
+</html>
 
