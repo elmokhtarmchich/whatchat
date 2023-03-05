@@ -74,11 +74,15 @@ function process(event) {
 }
 
 
-
 function openChat() {
 const phoneNumber = phoneInput.getNumber();
+
+    if (phoneNumber.length > 0) {
       window.location.href = "https://api.whatsapp.com/send?phone=" + phoneNumber;
-  }
+    } else {
+      alert("Please enter a valid phone number");
+    }
+}
 
 </script>
 
