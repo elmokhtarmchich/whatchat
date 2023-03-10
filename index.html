@@ -4,7 +4,7 @@
 <title>WhatsApp One Click</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
-<link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/oxygen-mono" rel="stylesheet">
                 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,9 +12,9 @@
 <style>
 
 body {
-   background-color: #1c1c16;
-font-family: GT Super,sans-serif;
-
+   background-color: #103928 ;
+font-family: 'Oxygen Mono', sans-serif;
+    font-weight: bold;
 }
 .footer {
    position: fixed;
@@ -22,7 +22,8 @@ font-family: GT Super,sans-serif;
    bottom: 0;
    width: 100%;
    height: 80px;
-   background-color: gray;
+background: rgba(156, 161, 160,0.3);
+
    color: white;
    text-align: center;
      padding: 10px;
@@ -47,15 +48,30 @@ img {
   color: #31708f;
   background-color: #d9edf7;
 }
+h2 {
+  border-color: #bce8f1;
+  color: #31708f;
+  background-color: #d9edf7;
+  font-family: 'Oxygen Mono', sans-serif;
+    font-weight: 900;
+      text-align: center;
+}
+.w3-container {
+  border-color: #bce8f1;
+  background-color: #217552;
+  margin: 15px;
+  padding: 15px;
+}
+
 </style>
 </head>
 <body>
+<h2>WhatsApp Direct</h2>
 
-<form onsubmit="process(event)" action="/action_page.php" class="w3-container w3-card-4 w3-light-grey w3-margin">
-<h2 class="w3-center">Phone number input</h2>
+<form onsubmit="process(event)" action="/action_page.php" class="w3-container">
 
 <div class="w3-row w3-section">
-<p class="">Phone number input</p>
+<p class="">Type phone number her:</p>
   <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-phone"></i></div>
       <input id="phone" type="tel" name="phone" class="w3-input w3-border" >
 </div>
