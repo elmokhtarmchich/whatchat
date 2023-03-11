@@ -3,6 +3,14 @@ body {
 font-family: 'Oxygen Mono', sans-serif;
     font-weight: bold;
 }
+
+.add-button {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+
+
 .footer {
    position: fixed;
    left: 0;
