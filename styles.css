@@ -1,41 +1,28 @@
 body {
-  font-family: Helvetica, sans-serif;
+   background-color: #103928 ;
+font-family: 'Oxygen Mono', sans-serif;
+    font-weight: bold;
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 80px;
+background: rgba(156, 161, 160,0.3);
+
+   color: white;
+   text-align: center;
+     padding: 10px;
+}
+img {
+   height:  100%;
 }
 
-.container {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+.w1-button {
+   height:  100%;
   padding: 10px;
 }
-
-#phone, .btn {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.btn {
-  color: #ffffff;
-  background-color: #428BCA;
-  border-color: #357EBD;
-  font-size: 14px;
-  outline: none;
-  cursor: pointer;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.btn:focus, .btn:hover {
-  background-color: #3276B1;
-  border-color: #285E8E;
-}
-
-.btn:active {
-  box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
-}
-
 .alert {
   padding: 15px;
   margin-top: 10px;
@@ -48,9 +35,17 @@ body {
   color: #31708f;
   background-color: #d9edf7;
 }
-
-.alert-error {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
+h2 {
+  border-color: #bce8f1;
+  color: #31708f;
+  background-color: #d9edf7;
+  font-family: 'Oxygen Mono', sans-serif;
+    font-weight: 900;
+      text-align: center;
+}
+.w3-container {
+  border-color: #bce8f1;
+  background-color: #217552;
+  margin: 15px;
+  padding: 15px;
 }
