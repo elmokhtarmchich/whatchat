@@ -1,14 +1,14 @@
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open('whatchat').then((cache) => cache.addAll([
-      '/whatchat/',
-      '/whatchat/index.html',
-      '/whatchat/index.js',
-      '/whatchat/styles.css',
-      '/whatchat/images/WhatsApp.png',
-      '/whatchat/images/logohead.png',
-      '/whatchat/icon/app-icon_192x192.png',
-      '/whatchat/icon/fox-icon.png',
+      '/',
+      '/index.html',
+      '/index.js',
+      '/styles.css',
+      '/images/WhatsApp.png',
+      '/images/logohead.png',
+      '/icon/app-icon_192x192.png',
+      '/icon/fox-icon.png',
     ])),
   );
 });
