@@ -4,7 +4,7 @@
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('./pwa-examples/whatchat/sw.js')
+    .register('./sw.js')
     .then(() => { console.log('Service Worker Registered'); });
 }
 
