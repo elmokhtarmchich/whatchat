@@ -16,7 +16,6 @@
   ],
   "name": "WhatsApp Direct",
   "short_name": "Start WA Chat",
-  "start_url": "/index.html",
+  "start_url": "/",
   "prefer_related_applications": true
-
 }
