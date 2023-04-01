@@ -17,5 +17,11 @@
   "name": "WhatsApp Direct",
   "short_name": "Start WA Chat",
   "start_url": "/",
-  "prefer_related_applications": true
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+    "platform": "play",
+    "id": "com.google.samples.apps.iosched"
+    }
+    ]
 }
