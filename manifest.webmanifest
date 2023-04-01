@@ -4,12 +4,19 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "icon/app-icon_192x192.png",
-      "sizes": "192x192",
+      "src": "/images/icons-192.png",
       "type": "image/png"
+      "sizes": "192x192",
+    },
+    {
+      "src": "/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "name": "WhatsApp Direct",
   "short_name": "Start WA Chat",
-  "start_url": "/index.html"
+  "start_url": "/index.html",
+  "prefer_related_applications": true
+
 }
