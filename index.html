@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
 <title>WhatsApp One Click</title>
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
@@ -11,8 +11,6 @@
 <script src="./index.js" defer></script>
 <link rel="manifest" href="/manifest.webmanifest">
 
-
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />                
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
@@ -20,12 +18,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
+<style>
+</style>
+
 </head>
 <body>
 
-<div class="container" >
+<div class="container">
+
 <form  id="login" onsubmit="process(event)">
-<div style="margin: 0 auto;">
+<div>
 <p class="act">Type phone number her:</p>
 <input id="phone" type="tel" name="phone">
 <div>
@@ -42,11 +44,9 @@
 
 <footer>
 <div class="footer">
-<button id="add-button" style="display: block;">Chat on WhatsApp</button>
+<input class="add-button" type="button" value="Add Web App">
 </div>
 </footer>
-
-
 
 <script>
 function getIp(callback) {
