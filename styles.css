@@ -14,14 +14,15 @@ body {
 font-family: 'Roboto', sans-serif;
 font-weight: bold;
 background-color: #21262d;
-color: rgb(255, 255, 255);
+color: #ccc;
 }
 
 .container {
 	background-color: #161b22;
-  max-width: 400px;
-  width: 100%;
-  margin: 10px;
+width: 100%;
+max-width: 400px;
+min-width: 300px;
+margin: auto;
  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -50,7 +51,7 @@ font-family: inherit;
     cursor: pointer;
     appearance: none;
     height: 40px;
-    color: rgb(255, 255, 255);
+    color: #ccc;
     border-radius: 6px;
     border: 1px solid gray;
     text-decoration: none;
