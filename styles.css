@@ -8,6 +8,7 @@
 	background-color: #161b22;
 color: white;
 padding: 10px;
+
 }
 
 body {
@@ -43,17 +44,18 @@ color: #ccc;
 
 .add-button {
 	background: transparent;
+  position: absolute;
+text-decoration: none;
+
 font-family: inherit;
-    font-weight: 500;
     font-size: 0.9rem;
 	font-weight: inherit;
     cursor: pointer;
     appearance: none;
     height: 40px;
-    color: #ccc;
+    color: #E5E6E4;
     border-radius: 6px;
-    border: 1px solid gray;
-    text-decoration: none;
+  border: 1px solid gray;
     padding: 10px;
 }
 
