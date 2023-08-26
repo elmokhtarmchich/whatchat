@@ -5,119 +5,45 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
   
-      <meta charset="utf-8">
-    <link href="/styles.css" rel="stylesheet">
-    <script src="/index.js" defer></script>
-    <link rel="manifest" href="/manifest.webmanifest">
-  
+<meta charset="utf-8">
+<link href="./styles.css" rel="stylesheet">
+<script src="./index.js" defer></script>
+<link rel="manifest" href="/manifest.webmanifest">
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
-<link href="https://fonts.cdnfonts.com/css/oxygen-mono" rel="stylesheet">
-                
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />                
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
 
-body {
-   background-color: #30363d;
-font-family: 'Oxygen Mono', sans-serif;
-    font-weight: bold;
-}
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   height: 80px;
-background: rgba(156, 161, 160,0.2);
-   color: black;
-   text-align: center;
-     padding: 10px;
-}
-img {
-   height:  100%;
-}
-
-.w1-button {
-   height:  100%;
-  padding: 10px;
-}
-.alert {
-  padding: 15px;
-  margin-top: 10px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-
-.alert-info {
-  border-color: #bce8f1;
-  color: #31708f;
-  background-color: #d9edf7;
-}
-h2 {
-  border-color: #bce8f1;
-  color: #31708f;
-  background-color: #d9edf7;
-  font-family: 'Oxygen Mono', sans-serif;
-    font-weight: 900;
-      text-align: center;
-}
-.w3-container {
-  border-color: #bce8f1;
-  background: rgba(156, 161, 160,0.2);
-   color: black;
-  margin: 15px;
-  padding: 15px;
-}
-
-</style>
-  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
-<form onsubmit="process(event)" action="/action_page.php" class="w3-container">
-
-<div class="w3-center">
-<p class="w3-text-white">Type phone number her:</p>
-      <input id="phone" type="tel" name="phone" class="w3-input w3-border">
+<div class="container" >
+<form  id="login" onsubmit="process(event)">
+<div style="margin: 0 auto;">
+<p class="act">Type phone number her:</p>
+<input id="phone" type="tel" name="phone">
+<div>
+<br>
+<input id="btn1" type="submit" class="btn" value="Verify format" />
+<div class="alert alert-info" style="display: none;"></div>
+</form>
+<p class="divider"></p>
+<button id="btn2" class="btn" onclick="openChat()" style="display: block;">Chat on WhatsApp</button>
 </div>
 
-  <button type="submit" class="w3-text-white w3-button w3-block w3-section w3-gray w3-ripple w3-padding" >Check format</button>
-  
-<div class="alert alert-info" style="display: none;"></div>
-
-</form>
-    <button class="add-button" style="display: block;">Add to home screen</button>
 </body>
+<footer>
+<div class="footer">
+<button class="add-button" style="display: block;">Add as App</button>
+</div>
 
-<img onclick="openChat()" alt="Chat on WhatsApp" src="./images/whatsapp.png" />
 
-  <footer class="bg-gray-50 dark:bg-gray-900">
-  <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-    <div class="sm:flex sm:items-center sm:justify-between">
-      <div
-        class="flex justify-center text-teal-600 dark:text-teal-300 sm:justify-start"
-      >
-        <svg
-          class="h-8"
-          viewBox="0 0 118 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-        </svg>
-      </div>
 
-      <p
-        class="mt-4 text-center text-sm text-gray-500 dark:text-gray-400 lg:mt-0 lg:text-right"
-      >
-        Copyright &copy; 2022. All rights reserved.
-      </p>
-    </div>
-  </div>
-</footer>
-  
 
 <script>
 function getIp(callback) {
