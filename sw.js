@@ -3,7 +3,6 @@ self.addEventListener('install', (e) => {
     caches.open('app-store').then((cache) => cache.addAll([
        '/index.html',
       '/index.js',
-      '/styles.css',
       '/images/WhatsApp.png',
       '/images/logohead.png',
       '/images/icons-192.png',
