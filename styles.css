@@ -16,12 +16,14 @@ font-family: 'Roboto', sans-serif;
 font-weight: bold;
 background-color: #21262d;
 color: #ccc;
+    padding-top: 55px; 
+
 }
 
 .container {
 background-color: #161b22;
 width: 100%;
-max-width: 400px;
+max-width: 380px;
 margin: auto;
 padding: 10px;
   border: 1px solid #ccc;
@@ -46,7 +48,6 @@ color: #ccc;
 	background: transparent;
   position: absolute;
 text-decoration: none;
-  display: none;
 font-family: inherit;
     font-size: 0.9rem;
 	font-weight: inherit;
@@ -70,7 +71,7 @@ font-family: inherit;
     background-color: transparent;
     appearance: none;
     color: rgb(255, 255, 255);
-    width: 100%;
+    width: 250px;
 	height: 40px;
 }
 
@@ -80,6 +81,23 @@ font-family: inherit;
 #btn2 {
     background-color: rgb(35, 134, 54);
 }
+
+#btn3 {
+	  background: transparent;
+    appearance: none;
+    height: 40px;
+    width: 60px;
+    border-radius: 6px;
+  border: 1px solid gray;
+  
+  font-family: inherit;
+    font-size: 0.9rem;
+	font-weight: inherit; 
+	    color: #E5E6E4;
+
+}
+
+
 .btn {
 font-family: inherit;
     font-weight: 500;
