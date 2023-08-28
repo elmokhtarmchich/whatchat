@@ -68,10 +68,11 @@ font-family: inherit;
     font-size: inherit;
     font-family: inherit;
 	font-weight: inherit;
+	letter-spacing: 0.2em;
     background-color: transparent;
     appearance: none;
     color: rgb(255, 255, 255);
-    width: 250px;
+    width: 230px;
 	height: 40px;
 }
 
