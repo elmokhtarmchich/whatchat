@@ -84,13 +84,13 @@ font-family: inherit;
 }
 
 #btn3 {
-	  background: transparent;
+background-color: #19273c;
     appearance: none;
     height: 40px;
     width: 50px;
     border-radius: 6px;
   border: 1px solid white;
-  padding-left: 6px;
+  padding-left: 10px;
   font-family: inherit;
     font-size: 0.9rem;
 	font-weight: inherit; 
