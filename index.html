@@ -8,6 +8,11 @@
  
 <meta charset="utf-8">
 <link href="./styles.css" rel="stylesheet">
+
+	<!-- / TOPNAV -->
+<link href="./topnav.css" rel="stylesheet">
+	<!-- / TOPNAV -->
+
 <script src="./index.js" defer></script>
 <link rel="manifest" href="/manifest.webmanifest">
 
@@ -23,13 +28,24 @@
 
 </head>
 <body>
+	<!-- / TOPNAV -->
+<div class="topnav" id="myTopnav">
+<a class="active" ><img href="watsapgo.net" class="logo" src="./icon/app-icon_192x192.png" ></a>
+<a href="#contact"><img class="img" src="./icon/contact.png"></a>
+<a onclick="notifyMe()"><img class="img" src="./icon/bell.png"></a>
+<a onclick="addToHomescreen()" ><img class="img" src="./icon/app.png"></a>
+<a href="#home" onclick="window.location.reload(true);"><img class="img" src="./icon/home.png"></a>
+</div>
+	<!-- / TOPNAV -->
+
 
 <div class="container">
 
 <form  id="login" onsubmit="process(event)">
-<div>
+<div
 <p class="act">Type phone number her:</p>
 <input id="phone" type="tel" name="phone" autofocus>
+<input type="button" id="btn3" value="Paste"/> 
 <div>
 <br>
 <input id="btn1" type="submit" class="btn" value="Verify format" />
@@ -99,5 +115,52 @@ var scale = screen.width /siteWidth;
 
 document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
 </script>
+
+
+	<!-- / paste -->
+
+<script>
+const pasteButton = document.querySelector('#btn3');
+
+pasteButton.addEventListener('click', async () => {
+   try {
+     const text = await navigator.clipboard.readText()
+     document.querySelector('#phone').value += text;
+     console.log('Text pasted.');
+   } catch (error) {
+     console.log('Failed to read clipboard');
+   }
+});
+</script>
+	<!-- / paste -->
+	<!-- / notifyMe -->
+	<script>
+function notifyMe() {
+  // Let's check if the browser supports notifications
+  if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+  }
+
+  // Let's check whether notification permissions have already been granted
+  else if (Notification.permission === "granted") {
+    // If it's okay let's create a notification
+    var notification = new Notification("Hi there!");
+  }
+
+  // Otherwise, we need to ask the user for permission
+  else if (Notification.permission !== "denied") {
+    Notification.requestPermission().then(function (permission) {
+      // If the user accepts, let's create a notification
+      if (permission === "granted") {
+        var notification = new Notification("Hi there!");
+      }
+    });
+  }
+
+  // At last, if the user has denied notifications, and you
+  // want to be respectful there is no need to bother them any more.
+}
+</script>
+	<!-- / notifyMe -->
 
 </html>
