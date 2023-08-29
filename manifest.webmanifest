@@ -12,7 +12,7 @@
       "src": "/favicon/app-icon_192x192.png",
       "type": "image/png"
 	  "sizes": "192x192",
-    },
+    }
   ],
   "name": "WhatsApp GO",
   "short_name": "WhatsApp GO",
