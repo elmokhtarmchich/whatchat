@@ -4,14 +4,9 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "/favicon/app-icon_192x192.png",
+      "src": "icon/app-icon_192x192.png",
       "type": "image/png"
-	  "sizes": "192x192"
-    },
-    {
-      "src": "/favicon/app-icon_512x512.svg",
-      "type": "image/png"
-      "sizes": "512x512"
+ "sizes": "192x192"
     }
   ],
   "name": "WhatsApp GO",
