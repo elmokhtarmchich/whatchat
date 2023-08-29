@@ -1,9 +1,8 @@
 {
   "background_color": "#19273c",
   "description": "Start WhatsApp GO Chat",
-  "display": "standalone",
+  "display": "fullscreen",
   "icons": [
-  
       {
       "src": "/favicon/app-icon_512x512.svg",
       "type": "image/png"
@@ -14,12 +13,6 @@
       "type": "image/png"
 	  "sizes": "192x192",
     },
-	    {
-      "src": "/favicon/app-icon_x192.png",
-      "type": "image/png"
-	  "sizes": "192x192",
-    }
-	
   ],
   "name": "WhatsApp GO",
   "short_name": "WhatsApp GO",
