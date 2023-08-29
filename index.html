@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name='viewport' content='width=350, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<meta name='viewport' content='width=330, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
 <title>WhatsApp One Click</title>
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
@@ -108,17 +108,18 @@ const phoneNumber = phoneInput.getNumber();
 }
 
 </script>
+
+	<!-- / Scale-screen -->
+
 <script>
-
-var siteWidth = 350;
+var siteWidth = 300;
 var scale = screen.width /siteWidth;
-
 document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
 </script>
+	<!-- / Scale-screen -->
 
 
 	<!-- / paste -->
-
 <script>
 const pasteButton = document.querySelector('#btn3');
 
