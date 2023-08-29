@@ -1,15 +1,28 @@
 {
-  "background_color": "#128C7E",
-  "description": "Start WhatsApp Direct Chat",
-  "display": "fullscreen",
+  "background_color": "#19273c",
+  "description": "Start WhatsApp GO Chat",
+  "display": "standalone",
   "icons": [
-    {
-      "src": "icon/app-icon_192x192.png",
-      "sizes": "192x192",
+  
+      {
+      "src": "/favicon/app-icon_512x512.svg",
       "type": "image/png"
+      "sizes": "512x512"
+    },
+    {
+      "src": "/favicon/app-icon_192x192.png",
+      "type": "image/png"
+	  "sizes": "192x192",
+    },
+	    {
+      "src": "/favicon/app-icon_x192.png",
+      "type": "image/png"
+	  "sizes": "192x192",
     }
+	
   ],
-  "name": "WhatsApp Direct",
-  "short_name": "Start WA Chat",
+  "name": "WhatsApp GO",
+  "short_name": "WhatsApp GO",
   "start_url": "/index.html"
 }
+
