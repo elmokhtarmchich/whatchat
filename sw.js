@@ -1,6 +1,6 @@
 self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open('watsap-store').then((cache) => cache.addAll([
+    caches.open('app-store').then((cache) => cache.addAll([
       '/index.html',
       '/index.js',
       '/style.css',
