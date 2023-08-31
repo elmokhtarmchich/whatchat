@@ -7,8 +7,6 @@ self.addEventListener('install', (e) => {
       '/topnav.css',
       '/intlTelInput.css',
       '/manifest.webmanifest',
-      '/sw.js',
-      '/script.js',
       './icon/app.png',
     './icon/bell.png',
     './icon/contact.png',
