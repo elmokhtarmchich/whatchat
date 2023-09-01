@@ -2,12 +2,17 @@
 
 // Register service worker to control making site work offline
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('./sw.js')
-    .then(() => { console.log('Service Worker Registered'); });
-}
 
+if ('serviceWorker' in navigator) {
+navigator.serviceWorker.register('/sw.js', { scope: '/' })
+        .then(function (registration)
+        {
+          console.log('Service worker registered successfully');
+        }).catch(function (e)
+        {
+          console.error('Error during service worker registration:', e);
+        });
+      }
 
 // Code to handle install prompt on desktop
 
