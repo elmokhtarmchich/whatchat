@@ -122,19 +122,22 @@ document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='
       info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
     }
     
-    function openChat() {
-      const phoneNumber = phoneInput.getNumber();
-    
-      if (phoneNumber.length > 0) {
-        const countryCode = phoneInput.getSelectedCountryData().iso2.toUpperCase();
-        const callingCode = phoneInput.intlTelInputUtils.getCountryData().find(c => c.iso2 === countryCode).dialCode;
-        const fullPhoneNumber = `+${callingCode}${phoneNumber}`;
-        window.location.href = "https://api.whatsapp.com/send?phone=" + fullPhoneNumber;
-      } else {
-        alert("Please enter a valid phone number");
-      }
+  </script>
+    <script>
+
+function openChat() {
+const phoneNumber = phoneInput.getNumber();
+
+    if (phoneNumber.length > 0) {
+      window.location.href = "https://api.whatsapp.com/send?phone=" + phoneNumber;
+    } else {
+      alert("Please enter a valid phone number");
     }
-    
+}
+
+  </script>
+    <script>
+
     // Add event listener to the paste button (#btn3)
     const pasteButton = document.querySelector('#btn3');
     pasteButton.addEventListener('click', async () => {
