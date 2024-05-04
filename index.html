@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-V6yzBs6gaFVp8MsdPo3wAxnNyujAEbxYKqZvX+x3MTT7ENeIkG1+dOsWgP6ymEID" crossorigin="anonymous">
 <meta name='viewport' content='width=330, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
 <title>WhatsApp One Click</title>
 
@@ -52,10 +53,12 @@
 <div class="container">
 
 <form  id="login" onsubmit="process(event)">
-<div
+<div></div>
 <p class="act">Type phone number her:</p>
 <input id="phone" type="tel" name="phone" autofocus>
-<input type="button" id="btn3" value="Paste"/> 
+<button id="btn3">
+  <img src="icon/paste.svg">
+</button>
 <div>
 <br>
 <input id="btn1" type="submit" class="btn" value="Verify format" />
@@ -63,7 +66,7 @@
 </form>
  
 <p class="divider"></p>
-<button id="btn2" class="btn" onclick="openChat()" style="display: block;">Chat on WhatsApp</button>
+<button id="btn2" class="btn" onclick="openChat()" style="display: block;">Open Chat</button>
 </div>
 
 </body>
@@ -74,50 +77,6 @@
 </div>
 </footer>
 
-<script>
-function getIp(callback) {
- fetch('https://ipinfo.io/json?token=f0076d2b18eca7', { headers: { 'Accept': 'application/json' }})
-   .then((resp) => resp.json())
-   .catch(() => {
-     return {
-       country: 'us',
-     };
-   })
-   .then((resp) => callback(resp.country));
-}
-
-  const phoneInputField = document.querySelector("#phone");
-const phoneInput = window.intlTelInput(phoneInputField, {
- initialCountry: "auto",
-   separateDialCode: "false",
-
- geoIpLookup: getIp,
- utilsScript:
-   "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-});
-
-const info = document.querySelector(".alert-info");
-
-function process(event) {
- event.preventDefault();
-
- const phoneNumber = phoneInput.getNumber();
-
- info.style.display = "";
- info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
-}
-
-function openChat() {
-const phoneNumber = phoneInput.getNumber();
-
-    if (phoneNumber.length > 0) {
-      window.location.href = "https://api.whatsapp.com/send?phone=" + phoneNumber;
-    } else {
-      alert("Please enter a valid phone number");
-    }
-}
-
-</script>
 
 	<!-- / Scale-screen -->
 
@@ -130,19 +89,84 @@ document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='
 
 
 	<!-- / paste -->
-<script>
-const pasteButton = document.querySelector('#btn3');
 
-pasteButton.addEventListener('click', async () => {
-   try {
-     const text = await navigator.clipboard.readText()
-     document.querySelector('#phone').value += text;
-     console.log('Text pasted.');
-   } catch (error) {
-     console.log('Failed to read clipboard');
-   }
-});
-</script>
+
+  <script>
+    function getIp(callback) {
+      fetch('https://ipinfo.io/json?token=f0076d2b18eca7', { headers: { 'Accept': 'application/json' }})
+        .then((resp) => resp.json())
+        .catch(() => {
+          return {
+            country: 'US', // Default to US if IPInfo lookup fails
+          };
+        })
+        .then((resp) => callback(resp.country));
+    }
+    
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      initialCountry: "auto",
+      separateDialCode: "false",
+      geoIpLookup: getIp,
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+    
+    const info = document.querySelector(".alert-info");
+    
+    function process(event) {
+      event.preventDefault();
+    
+      const phoneNumber = phoneInput.getNumber();
+    
+      info.style.display = "";
+      info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
+    }
+    
+    function openChat() {
+      const phoneNumber = phoneInput.getNumber();
+    
+      if (phoneNumber.length > 0) {
+        const countryCode = phoneInput.getSelectedCountryData().iso2.toUpperCase();
+        const callingCode = phoneInput.intlTelInputUtils.getCountryData().find(c => c.iso2 === countryCode).dialCode;
+        const fullPhoneNumber = `+${callingCode}${phoneNumber}`;
+        window.location.href = "https://api.whatsapp.com/send?phone=" + fullPhoneNumber;
+      } else {
+        alert("Please enter a valid phone number");
+      }
+    }
+    
+    // Add event listener to the paste button (#btn3)
+    const pasteButton = document.querySelector('#btn3');
+    pasteButton.addEventListener('click', async () => {
+      try {
+        const text = await navigator.clipboard.readText();
+        // Detect and replace calling code
+        const phoneNumberWithCallingCode = replaceCallingCode(text);
+        // Set the formatted phone number in the input field
+        phoneInput.setNumber(phoneNumberWithCallingCode);
+        console.log('Pasted phone number with calling code:', phoneNumberWithCallingCode);
+      } catch (error) {
+        console.log('Failed to read clipboard');
+      }
+    });
+    
+    // Function to detect and replace calling code
+    function replaceCallingCode(phoneNumber) {
+      // Regular expression to match the calling code at the beginning of the number
+      const callingCodeRegex = /^\+?\d{1,3}/;
+      // Extract the calling code from the phone number
+      const callingCodeMatch = phoneNumber.match(callingCodeRegex);
+      if (callingCodeMatch) {
+        const callingCode = callingCodeMatch[0];
+        // Replace the detected calling code with the desired one
+        const newCallingCode = callingCode; // Change this to the new calling code you want to use
+        return phoneNumber.replace(callingCode, newCallingCode);
+      }
+      return phoneNumber;
+    }
+    </script>
+    
+
 	<!-- / paste -->
 	<!-- / notifyMe -->
 	<script>
