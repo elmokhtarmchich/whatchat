@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-V6yzBs6gaFVp8MsdPo3wAxnNyujAEbxYKqZvX+x3MTT7ENeIkG1+dOsWgP6ymEID" crossorigin="anonymous">
 <meta name='viewport' content='width=330, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
 <title>WhatsApp One Click</title>
-
 	<!-- / FAVICON -->
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -13,29 +12,19 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 <script src="./index.js" defer></script>
-
 <link rel="manifest" href="/manifest.webmanifest">
-
 	<!-- / FAVICON -->
-
-
 <meta charset="utf-8">
 <link href="./styles.css" rel="stylesheet">
-
 	<!-- / TOPNAV -->
 <link href="./topnav.css" rel="stylesheet">
 	<!-- / TOPNAV -->
-
-
 <link rel="stylesheet" href="./intlTelInput.css" />                
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
-<style>
-</style>
 
 </head>
 <body>
@@ -50,25 +39,63 @@
 	<!-- / TOPNAV -->
 
 
-<div class="container">
+<div class="container" id="main">
+        <form  id="login"  onsubmit="process(event)">
+                <p class="act">Type phone number her:</p>
+                <div class="center-h">
+                        <input id="phone" type="tel" name="phone" autofocus>
+                </div>
 
-<form  id="login" onsubmit="process(event)">
-<div></div>
-<p class="act">Type phone number her:</p>
-<input id="phone" type="tel" name="phone" autofocus>
-<button id="btn3">
-  <img src="icon/paste.svg">
-</button>
-<div>
-<br>
-<input id="btn1" type="submit" class="btn" value="Verify format" />
-<div class="alert alert-info" style="display: none;"></div>
-</form>
+                <div class="button-container">
+  <div class="button" id="btn1">
+    <div class="button-content">
+      <img src="./icon/paste.svg">
+      <span class="button-title">Paste</span>
+    </div>
+  </div>
+  <div class="button" id="btn2" type="submit" onclick="process(event)">
+    <div class="button-content">
+      <img src="./icon/check.svg">
+      <span class="button-title">Check</span>
+    </div>
+  </div>
+  <div class="button" id="btn3" onclick="clearPhoneInput()">
+    <div class="button-content">
+      <img src="./icon/cut.svg">
+      <span class="button-title">Cut</span>
+    </div>
+  </div>
+  <div class="button" id="btn4" onclick="openChat()" >
+    <div class="button-content">
+      <img src="./icon/openchaticon.svg">
+      <span class="button-title">Open</span>
+    </div>
+  </div>
+                </div>
+
+                <div class="alert alert-info" style="display: none;"></div>
+        </form>
  
-<p class="divider"></p>
-<button id="btn2" class="btn" onclick="openChat()" style="display: block;">Open Chat</button>
 </div>
 
+
+<div class="container" id="info">
+  <h1>
+    Introducing WatsapGO
+  </h1>
+  <p>
+    This Web App uses WhatsApp public api to open a chat with any number you enter. No need to create contact on the device.
+    </p>
+    <p>
+    Insert the number and the prefix with no extra characters, only numbers 0-9. 
+  </p>
+  <p>
+    This app uses Ip geolocalisation to automatically select the country prefix. The user can manually select the profix by clicking on the prefix dropdown list and choose the prefered prefix. 
+  </p>
+  <p>
+     In case the phone number was already copied, Click on The Magic Paste Button will easly insert the number and the prefix.  
+  </p>
+ </div>
 </body>
 
 <footer>
@@ -87,9 +114,22 @@ document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='
 </script>
 	<!-- / Scale-screen -->
 
+  	<!-- / empty and reset -->
+    <script>
+      // Function to clear the phone input
+      function clearPhoneInput() {
+        const phoneInputField = document.querySelector("#phone");
+        phoneInputField.value = ""; // Empty the input field
+      }
+      
+      // Add event listener to the reset button (#btn3)
+      const resetButton = document.querySelector('#btn3');
+      resetButton.addEventListener('click', clearPhoneInput);
+      </script>
+      
+ 
 
 	<!-- / paste -->
-
 
   <script>
     function getIp(callback) {
@@ -123,8 +163,8 @@ document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='
     }
     
   </script>
-    <script>
 
+<script>
 function openChat() {
 const phoneNumber = phoneInput.getNumber();
 
@@ -134,12 +174,13 @@ const phoneNumber = phoneInput.getNumber();
       alert("Please enter a valid phone number");
     }
 }
-
   </script>
-    <script>
+
+
+<script>
 
     // Add event listener to the paste button (#btn3)
-    const pasteButton = document.querySelector('#btn3');
+    const pasteButton = document.querySelector('#btn1');
     pasteButton.addEventListener('click', async () => {
       try {
         const text = await navigator.clipboard.readText();
