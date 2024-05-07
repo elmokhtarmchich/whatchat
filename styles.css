@@ -34,7 +34,7 @@ margin: auto;
 padding: 10px;
  border: 1px solid #ccc;
  border-radius: 40px;
-
+box-sizing: border-box;
 }
 
 #main {
