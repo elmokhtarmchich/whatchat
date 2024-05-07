@@ -3,7 +3,7 @@
 
 
 .topnav {
-z-index: 1;
+z-index: 3;
 overflow: hidden;
 background-color: #161b22;
 position: fixed;
