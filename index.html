@@ -30,10 +30,10 @@
 <body>
 	<!-- / TOPNAV -->
 <div class="topnav" id="myTopnav">
-<a class="active" ><img href="watsapgo.net" class="logo" src="./favicon/app-icon_192x192.png" ></a>
+<a class="active" ><img href="watsapgo.net" class="logo" src="./favicon/app-icon_192x192.png" >WatsapGO</a>
 <a href="#contact"><img class="img" src="./icon/contact.svg"></a>
 <a onclick="notifyMe()"><img class="img" src="./icon/bell.svg"></a>
-<a onclick="deferredPrompt.prompt()" ><img class="img" src="./icon/app.svg"></a>
+<a onclick="beforeinstallprompt()" ><img class="img" src="./icon/app.svg"></a>
 <a href="#home" onclick="window.location.reload(true);"><img class="img" src="./icon/home.svg"></a>
 </div>
 	<!-- / TOPNAV -->
@@ -41,12 +41,12 @@
 
 <div class="container" id="main">
         <form  id="login"  onsubmit="process(event)">
-                <p class="act">Type phone number her:</p>
+                <p class="act">Insert phone number her ⬎</p>
                 <div class="center-h">
                         <input id="phone" type="tel" name="phone" autofocus>
                 </div>
 
-                <div class="button-container">
+<div class="button-container">
   <div class="button" id="btn1">
     <div class="button-content">
       <img src="./icon/paste.svg">
