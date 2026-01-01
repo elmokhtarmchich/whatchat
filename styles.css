@@ -22,8 +22,8 @@
 
 
 p {
-font-size: 14px;
-line-height: 20px;
+font-size: 16px;
+line-height: 22px;
 font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
 letter-spacing: normal;
 font-weight: bold;
@@ -121,8 +121,8 @@ letter-spacing: 0.2em;
 background-color: transparent;
 appearance: none;
 color: rgb(255, 255, 255);
-width: 280px;
-height: 50px;
+width: 300px;
+height: 58px;
 }
 
     .center-h {
@@ -163,7 +163,7 @@ font-size: 0.9rem;
 }
 
 .button-title {
-font-size: 12px;
+font-size: 14px;
 font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
 letter-spacing: normal;
 font-weight: bold;
@@ -181,8 +181,8 @@ font-weight: bold;
 display: flex;
 align-items: center;
 justify-content: center;
-height: 40px;
-width: 40px;
+height: 48px;
+width: 48px;
 border-radius: 6px;
 border: 1px solid rgb(110, 110, 110);
 padding: 7px;
