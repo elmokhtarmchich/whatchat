@@ -46,12 +46,13 @@ font-family: 'Roboto', sans-serif;
 font-weight: bold;
 background-color: #21262d;
 color: #ccc;
-padding-top: 55px; 
+padding-top: 55px;
+  padding-left:5px;
+  padding-right:5px;
 }
 
 .container {
 width: 100%;
-max-width: 340px;
 margin: auto;
 padding: 10px 20px 20px 20px;
 border: 1px solid transparent;
@@ -88,7 +89,7 @@ box-sizing: border-box;
 
 .act {
 font-family: inherit;
-font-size: 0.9rem;
+font-size: 1.1rem;
 color: #ccc;
 }
 
@@ -113,15 +114,15 @@ text-align: center;
 padding-top: 6px;
  padding-bottom: 6px;
  border: 1px solid #ccc;
- border-radius: 6px;
-font-size: inherit;
+ border-radius: 10px;
+font-size: 1.2rem;
 font-family: inherit;
 font-weight: inherit;
 letter-spacing: 0.2em;
 background-color: transparent;
 appearance: none;
 color: rgb(255, 255, 255);
-width: 300px;
+width: 345px;
 height: 58px;
 }
 
@@ -181,9 +182,9 @@ font-weight: bold;
 display: flex;
 align-items: center;
 justify-content: center;
-height: 48px;
-width: 48px;
-border-radius: 6px;
+height: 56px;
+width: 56px;
+border-radius: 10px;
 border: 1px solid rgb(110, 110, 110);
 padding: 7px;
 margin-top: 10px;
@@ -205,5 +206,5 @@ transition: background-color 0.5s ease;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  padding: 4px
+  padding: 4px;
 }
