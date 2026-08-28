@@ -5,12 +5,16 @@ self.addEventListener('install', (e) => {
     caches.open('app-store').then((cache) => cache.addAll([
 
       './index.html',
-      './style.css',
+      './styles.css',
       './intlTelInput.css',
       './topnav.css',
-      './icon/app-icon_192x192.png',
-      './icon/bell.png',
-      './icon/contact.png',
+      './manifest.webmanifest',
+      './favicon/favicon.ico',
+      './favicon/favicon.svg',
+      './favicon/apple-touch-icon.png',
+      './favicon/favicon-96x96.png',
+      './favicon/web-app-manifest-192x192.png',
+      './favicon/web-app-manifest-512x512.png',
     ])),
   );
 });
